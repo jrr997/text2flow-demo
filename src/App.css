@@ -1,8 +1,16 @@
+/* @import url('./theme.css'); */
+
+:root {
+  --flow-bg: linear-gradient(to bottom, #020917, #101725);
+}
+.react-flow {
+  --xy-minimap-background-color-props: var(--flow-bg);
+}
+
 body {
   margin: 0;
-  color: #fff;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #020917, #101725);
+  background-image: var(--flow-bg);
 }
 
 .content {
@@ -23,4 +31,96 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   opacity: 0.5;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-section {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.input-section form {
+  display: flex;
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.submit-button,
+.export-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button {
+  background-color: #4caf50;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.export-button {
+  background-color: #2196f3;
+}
+
+.export-button:hover {
+  background-color: #1976d2;
+}
+
+.flow-container {
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.react-flow__node {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  background-color: #4caf50;
+}
+
+.react-flow__edge-path {
+  stroke: #4caf50;
+  stroke-width: 2;
+}
+
+.node-content {
+  padding: 5px;
+}
+
+.node-content input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
 }
